@@ -6,7 +6,7 @@
     
 <script type="text/javascript">  
     function sendIt(id) {  
-        var goto = './fileid/'+id;
+        var goto = 'http://localhost:5001/fileid/'+id;
         $.ajax({
             url: goto,
             data: '',
@@ -32,7 +32,7 @@
     
     function startTalking(){
          $.ajax({
-            url: './start/',
+            url: 'http://localhost:5001/start/',
             data: '',
             type: 'GET',
             success: function(response) {
@@ -46,7 +46,7 @@
     
     function stopTalking(){
          $.ajax({
-            url: './stop/',
+            url: 'http://localhost:5001/stop/',
             data: '',
             type: 'GET',
             success: function(response) {
@@ -60,7 +60,7 @@
     
     function isTalking(){
          $.ajax({
-            url: './isTalking/',
+            url: 'http://localhost:5001/isTalking/',
             data: '',
             type: 'GET',
             success: function(response) {
