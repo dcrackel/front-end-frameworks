@@ -1,0 +1,119 @@
+body {
+    background-color: #3393d2;
+    margin: 0px 0px 0px 0px;
+}
+
+banner {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #e4e7e8;
+    width: 100%;
+    margin: 0px 0px 0px 0px;
+    border-bottom: 1px solid #b7bbbf;
+}
+
+bannericon {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-image: url("../img/parroticon.png");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
+    border-radius: 50%;
+    border: 2px solid #b7bbbf;
+    margin: 10px;
+}
+
+
+buttonbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    background: #D0D0D0;
+}
+
+buttons {
+    display: block;
+    width: 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+
+powericon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    /* background-image: url(../img/powericon2.png); */
+    background-color: gray;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    border-radius: 50%;
+    border: 2px solid #999999;
+    margin: 4px;  
+    cursor: pointer;
+}
+
+talkbutton {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-image: url("../img/playicon.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    border-radius: 50%;
+    border: 1px solid #b7bbbf;
+}
+
+bannertextbox {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px 0px 0px;
+}
+
+bannertext {
+    display:block;
+    font-size: 24pt;
+    color: #798787;
+    font-family: Verdana;
+    border-bottom: 1px solid #b7bbbf;
+    margin: 0px 0px 5px 0px;
+}
+
+bannertext2 {
+    display:block;
+    font-size: 14pt;
+    color: #798787;
+    font-family: Verdana;
+    margin: 0px 0px 0px 0px;
+}
+
+
+talkboxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+talkrow {
+    display: flex;
+    width: 80%;
+    height: 50px;
+    background-color: #e4e7e8;
+    margin: 30px 0px 0px 0px;
+    align-self: center;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+talkdesc {
+    display:block;
+    font-size: 14pt;
+    color: #798787;
+    font-family: Verdana;
+    margin: 12px 0px 0px 10px; 
+}

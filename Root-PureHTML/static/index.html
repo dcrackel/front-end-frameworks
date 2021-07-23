@@ -1,0 +1,254 @@
+<html>
+<head>
+    <script src="./static/js/jquery.js"></script>
+    <link rel="stylesheet" href="./static/css/parrot.css">
+</head>
+    
+<script type="text/javascript">  
+    function sendIt(id) {  
+        var goto = './fileid/'+id;
+        $.ajax({
+            url: goto,
+            data: '',
+            type: 'GET',
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    }
+    
+    function changeTalking(){
+        //alert($("powericon").css("background-color"));
+        if ($("powericon").css("background-color") === "rgb(255, 0, 0)"){ 
+            startTalking(); 
+        }
+        if ($("powericon").css("background-color") === "rgb(0, 128, 0)"){ 
+            stopTalking();
+        }
+    }
+    
+    function startTalking(){
+         $.ajax({
+            url: './start/',
+            data: '',
+            type: 'GET',
+            success: function(response) {
+                $("powericon").css("background-color", "GREEN");
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });       
+    }
+    
+    function stopTalking(){
+         $.ajax({
+            url: './stop/',
+            data: '',
+            type: 'GET',
+            success: function(response) {
+                $("powericon").css("background-color", "RED");
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });       
+    }        
+    
+    function isTalking(){
+         $.ajax({
+            url: './isTalking/',
+            data: '',
+            type: 'GET',
+            success: function(response) {
+                if (response.indexOf("false") > -1){
+                      $("powericon").css("background-color", "RED");
+                } else {
+                    $("powericon").css("background-color", "GREEN");
+                }
+                
+                
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });       
+    }
+    
+    var intervalId = window.setInterval(function(){ isTalking() }, 10000);
+    
+</script>     
+<body>
+
+<banner>
+    <bannericon></bannericon>
+    <bannertextbox>
+    <bannertext>Bosco the Amazing Parrot!</bannertext>
+    <bannertext2>and his super nifty soundboard</bannertext2>
+    </bannertextbox>
+</banner> 
+<buttonbar>
+        <buttonspace></buttonspace>
+        <powerbutton>
+            <powericon onClick="changeTalking();"></powericon>
+        </powerbutton>
+   
+</buttonbar>      
+    
+<talkboxes>
+<talkrow onClick="sendIt(1);">
+<talkbutton></talkbutton><talkdesc>Welcome!</talkdesc>  
+</talkrow> 
+    
+    
+<talkrow onClick="sendIt(2);">
+<talkbutton></talkbutton><talkdesc>Ahoy there matey</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(3);">
+<talkbutton></talkbutton><talkdesc>Parrots like rum, little know fact</talkdesc>  
+</talkrow>    
+    
+<talkrow onClick="sendIt(4);">
+<talkbutton></talkbutton><talkdesc>All decisions are pour decisions </talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(5);">
+<talkbutton></talkbutton><talkdesc>Roll for initiative </talkdesc>  
+</talkrow>  
+
+<talkrow onClick="sendIt(6);">
+<talkbutton></talkbutton><talkdesc>Yo ho yo ho a parrots life for me.</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(7);">
+<talkbutton></talkbutton><talkdesc>You should have another one</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(8);">
+<talkbutton></talkbutton><talkdesc>Are you going to drink that?</talkdesc>  
+</talkrow>
+
+<talkrow onClick="sendIt(9);">
+<talkbutton></talkbutton><talkdesc>Your a pretty bird</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(10);">
+<talkbutton></talkbutton><talkdesc>Bosco wants a Mai Tai</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(11);">
+<talkbutton></talkbutton><talkdesc>Bosco wants a cracker</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(12);">
+<talkbutton></talkbutton><talkdesc>Alexa, order crackers.</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(13);">
+<talkbutton></talkbutton><talkdesc>Yo ho ho and I like a drink of rum</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(14);">
+<talkbutton></talkbutton><talkdesc>Booze Ahoy!</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(15);">
+<talkbutton></talkbutton><talkdesc>Always Stay hydrated</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(16);">
+<talkbutton></talkbutton><talkdesc>Drink some more</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(17);">
+<talkbutton></talkbutton><talkdesc>I feel a breeze</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(18);">
+<talkbutton></talkbutton><talkdesc>Bar is closed, bar is closed</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(19);">
+<talkbutton></talkbutton><talkdesc>What's that behind you?</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(20);">
+<talkbutton></talkbutton><talkdesc>Don’t swear in front of the bird…</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(21);">
+<talkbutton></talkbutton><talkdesc>Is that a new car… bombs away, bombs away</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(22);">
+<talkbutton></talkbutton><talkdesc>Run! It’s the police!</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(23);">
+<talkbutton></talkbutton><talkdesc>Help Me! They Turned Me Into a Parrot!</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(24);">
+<talkbutton></talkbutton><talkdesc>Ooh, La La!</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(25);">
+<talkbutton></talkbutton><talkdesc>I drink, and I know things..</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(26);">
+<talkbutton></talkbutton><talkdesc>Don’t eat the bird! Don’t eat the bird!</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(27);">
+<talkbutton></talkbutton><talkdesc>I’ll show you a bird!</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(28);">
+<talkbutton></talkbutton><talkdesc>Don’t let self doubt interfere with your plans for a better life</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(29);">
+<talkbutton></talkbutton><talkdesc>I’m a fluffy dinosaur</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(30);">
+<talkbutton></talkbutton><talkdesc>Iceburg to the starboard!</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(31);">
+<talkbutton></talkbutton><talkdesc>All hands on deck!</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(32);">
+<talkbutton></talkbutton><talkdesc>Stick ‘em with the pointy end</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(33);">
+<talkbutton></talkbutton><talkdesc>You look thirsty, have another one!</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(34);">
+<talkbutton></talkbutton><talkdesc>I’m happy as a bar parrot. Have you heard what they do to canaries?</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(35);">
+<talkbutton></talkbutton><talkdesc>See you again soon</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(36);">
+<talkbutton></talkbutton><talkdesc>What are we going to do tonight?</talkdesc>  
+</talkrow>
+    
+<talkrow onClick="sendIt(37);">
+<talkbutton></talkbutton><talkdesc>The money is hidden in the....</talkdesc>  
+</talkrow>    
+    
+    
+</talkboxes>        
+</body>
+</html>
